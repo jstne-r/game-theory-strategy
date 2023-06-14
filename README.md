@@ -12,6 +12,7 @@ Game Theory Strategy is a web application that allows users to explore and analy
 - Saddle Point and Optimal Gain/Loss: The application calculates and displays the saddle point of the game matrix, as well as the corresponding optimal gain or loss for each player.
 - Responsive Design: The web application is designed to be responsive, ensuring a seamless user experience across different devices and screen sizes.
 
+
 ## ⛓️ Getting Started
 
 To get started with the **Game Theory Strategy** application, follow these steps:
@@ -25,6 +26,7 @@ To get started with the **Game Theory Strategy** application, follow these steps
 7. Explore the saddle point and optimal gain/loss displayed below the game table.
 
 
+
 ## 💁 Contributing
 
 Contributions are welcome to enhance the features and functionality of the **Game Theory Strategy** application. If you would like to contribute, please follow these steps:
@@ -34,6 +36,7 @@ Contributions are welcome to enhance the features and functionality of the **Gam
 3. Make your modifications and commit the changes: `git commit -m "Add feature"`.
 4. Push the branch to your forked repository: `git push origin feature-name`.
 5. Submit a pull request with a detailed description of your changes.
+
 
 ## ⚔️ Acknowledgements
 
