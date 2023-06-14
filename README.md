@@ -1,6 +1,6 @@
 # Game Theory Strategy
 
-👋 **Hi there!**
+### 👋 **Hi there!**
 
 Game Theory Strategy is a web application that allows users to explore and analyze strategies in the field of game theory. Game theory is a mathematical framework used to study decision-making in competitive situations. The web-application provides a platform for users to input strategies, solve for optimal outcomes, and explore different game scenarios instantly!.
 
