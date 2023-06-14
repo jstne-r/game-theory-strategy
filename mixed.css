@@ -1,0 +1,90 @@
+body {
+    font-family: 'Poppins';
+    margin: 0;
+    color: white;
+    background-color:#1E1E1E;
+  }
+
+.content-centered{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1, p {
+  text-align: center;
+}
+
+.form-group1 {
+  margin-bottom: 15px;
+}
+.form-group2 {
+  float: center;
+}
+
+label {
+  font-weight: bold;
+}
+
+.matrix-table{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+input[type="number"] {
+  width: 90px;
+  height: 90px;
+  padding: 5px;
+  background-color: lightgrey;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  font-size: 35px;
+}
+
+.button-wrapper {
+  text-align: center;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Poppins';
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition:  0.3 ease-in;
+  background-color: #D0EA59;
+}
+
+#result {
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .matrix-table {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Media query for screens smaller than 600px */
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/* Media query for screens smaller than 400px */
+@media (max-width: 400px) {
+  .container {
+    font-size: 14px;
+  }
+}

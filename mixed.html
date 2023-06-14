@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mixed Strategy </title>
+  
+  <link rel="stylesheet" href="mixed.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
+
+
+</head>
+
+<body>
+  <div class="content-centered">
+    <h1>Mixed Strategy</h1>
+    <p>Enter the payoff matrix for the following players:</p><br><br>
+
+
+    <div class="matrix-table">
+        <span class="form-group1">
+          <label for="playerA">Player A's Payoff Matrix:</label><br>
+          <input type="number" id="a11" placeholder="A11"> <input type="number" id="a12" placeholder="A12"><br>
+          <input type="number" id="a21" placeholder="A21"> <input type="number" id="a22" placeholder="A22"><br><br>
+        </span>
+        
+        <span class="form-group2">
+          <label for="playerB">Player B's Payoff Matrix:</label><br>
+          <input type="number" id="b11" placeholder="B11"> <input type="number" id="b12" placeholder="B12"><br>
+          <input type="number" id="b21" placeholder="B21"> <input type="number" id="b22" placeholder="B22"><br>
+        </span>
+    </div> 
+  
+    <div id="result"></div>
+  
+      <div class="button-wrapper">
+        <br> <button onclick="calculateMixedStrategy()">Calculate</button><br>
+      </div>
+  
+  </div>
+  
+  <script>
+    function calculateMixedStrategy() {
+      var a11 = parseFloat(document.getElementById('a11').value);
+      var a12 = parseFloat(document.getElementById('a12').value);
+      var a21 = parseFloat(document.getElementById('a21').value);
+      var a22 = parseFloat(document.getElementById('a22').value);
+      
+      var b11 = parseFloat(document.getElementById('b11').value);
+      var b12 = parseFloat(document.getElementById('b12').value);
+      var b21 = parseFloat(document.getElementById('b21').value);
+      var b22 = parseFloat(document.getElementById('b22').value);
+      
+      var denominator = a11 * (b22 - b12) - a21 * (b22 - b12) + a12 * (b21 - b11) - a22 * (b21 - b11);
+      
+      var pA = ((b22 - b12) / denominator).toFixed(2);
+      var pB = ((a21 - a11) / denominator).toFixed(2);
+      
+      var result = "Mixed Strategy:<br>Player A: " + pA + "<br>Player B: " + pB;
+      
+      document.getElementById('result').innerHTML = result;
+    }
+  </script>
+  
+</body>
+</html>

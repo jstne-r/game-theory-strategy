@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dominance Property</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dominance.css">
+
+  <script>
+    function calculateGame() {
+      var matrixSize = document.getElementById("matrixSize").value;
+
+      var size = matrixSize.split("x");
+      var numRows = parseInt(size[0]);
+      var numCols = parseInt(size[1]);
+
+      var matrix = [];
+      for (var i = 0; i < numRows; i++) {
+        matrix[i] = [];
+        for (var j = 0; j < numCols; j++) {
+          var cellValue = document.getElementById("cell_" + i + "_" + j).value;
+          matrix[i][j] = parseInt(cellValue);
+        }
+      }
+
+      var value = calculateGameValue(matrix);
+
+      document.getElementById("result").innerHTML = "Value of the game: " + value;
+    }
+
+    function calculateGameValue(matrix) {
+      var numRows = matrix.length;
+      var numCols = matrix[0].length;
+
+      var rowMinimums = [];
+      for (var i = 0; i < numRows; i++) {
+        var rowValues = matrix[i];
+        var minRowValue = Math.min(...rowValues);
+        rowMinimums.push(minRowValue);
+      }
+
+      var gameValue = Math.max(...rowMinimums);
+      return gameValue;
+    }
+  </script>
+
+</head>
+<body>
+  <div class="content-centered">
+    <h1>Dominance Property Calculator</h1>
+    
+    <!-- Paki ayos yung font [UPDATE: ADDED FONT] --> 
+    <p>Enter the matrix size in the format [number of rows] x [number of columns].</p>
+    
+    <!-- pakilagyan ng class yung text tas pakilagyan UI [UPDATE: ADDED] --> 
+    <input type="text" id="matrixSize" placeholder="Matrix Size (e.g., 2x3)" maxlength="3" title="Put only single digit eg. 2x2"><br><br>
+    
+    <!--Main generated table-->
+    <table id="matrix"></table><br>
+    
+    <!--Result is above the calculate btn-->
+    <div id="result"></div><br>
+
+    <!-- pakilagyan nalang ng UI etong button lagyan nalang ng class [UPDATE: ADDED] -->
+    <button onclick="calculateGame()">Calculate</button>
+  </div>
+
+  
+  <script>
+    document.getElementById("matrixSize").addEventListener("input", function() {
+      var matrixSize = document.getElementById("matrixSize").value;
+      var size = matrixSize.split("x");
+      var numRows = parseInt(size[0]);
+      var numCols = parseInt(size[1]);
+
+      var table = document.getElementById("matrix");
+      var tableWidth = 10; // Set the desired width value in pixels
+      table.style.width = tableWidth + "px";
+      table.innerHTML = "";
+
+      for (var i = 0; i < numRows; i++) {
+        var row = document.createElement("tr");
+        for (var j = 0; j < numCols; j++) {
+          var cell = document.createElement("td");
+          var input = document.createElement("input");
+          input.id = "cell_" + i + "_" + j;
+          input.type = "number";
+          cell.appendChild(input);
+          row.appendChild(cell);
+        }
+        table.appendChild(row);
+      }
+
+      var tableWidth = numCols * 50;
+      table.style.width = tableWidth + "px";
+    });
+  </script>
+</body>
+</html>
