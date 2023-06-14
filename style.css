@@ -55,7 +55,7 @@ section{
     animation: "animate__fadeIn";
     animation-duration: 4s;
     border-radius: 25px;
-    height: 450px;
+    height: 350px;
     float: left;
     width: 25%;
     transition: transform 0.3s ease;
