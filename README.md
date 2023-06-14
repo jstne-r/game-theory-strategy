@@ -43,8 +43,7 @@ Contributions are welcome to enhance the features and functionality of the **Gam
 The Game Theory Strategy is a project made by the students of Pamantasan ng Lungsod ng Maynila.
 
 
-### 🔗 Here's the live link for the repo: 
-    https://jstne-r.github.io/game-theory-strategy/
+#### 🔗 Here's the live link for the repo: https://jstne-r.github.io/game-theory-strategy/
 
 
 Thank you for visiting **Game Theory Strategy** repo. Happy strategizing!
